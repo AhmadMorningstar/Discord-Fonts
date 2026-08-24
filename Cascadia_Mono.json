@@ -1,0 +1,25 @@
+{
+  "spec": 1,
+  "name": "Cascadia Mono",
+  "previewText": "Cascadia Mono is a modern, monospaced font built for terminal environments and code editors.",
+  "main": {
+    "ABCGintoNord-ExtraBold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Bold.ttf?raw=1",
+    "ggsans-Bold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Bold.ttf?raw=1",
+    "ggsans-BoldItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-BoldItalic.ttf?raw=1",
+    "ggsans-ExtraBold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Bold.ttf?raw=1",
+    "ggsans-ExtraBoldItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-BoldItalic.ttf?raw=1",
+    "ggsans-Medium": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Medium.ttf?raw=1",
+    "ggsans-MediumItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-MediumItalic.ttf?raw=1",
+    "ggsans-Normal": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Regular.ttf?raw=1",
+    "ggsans-NormalItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Italic.ttf?raw=1",
+    "ggsans-Semibold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-SemiBold.ttf?raw=1",
+    "ggsans-SemiboldItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-SemiBoldItalic.ttf?raw=1",
+    "NotoSans-Bold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Bold.ttf?raw=1",
+    "NotoSans-ExtraBold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Bold.ttf?raw=1",
+    "NotoSans-Medium": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Medium.ttf?raw=1",
+    "NotoSans-Normal": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Regular.ttf?raw=1",
+    "NotoSans-NormalItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Italic.ttf?raw=1",
+    "NotoSans-Semibold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-SemiBold.ttf?raw=1",
+    "ggmono-Normal": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Regular.ttf?raw=1"
+  }
+}
