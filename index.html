@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenge Discord Custom Fonts</title>
+  <style>
+    :root {
+      --bg-color: #0f111a;
+      --card-bg: #1a1d2d;
+      --accent-color: #5865f2;
+      --accent-hover: #4752c4;
+      --text-main: #f2f3f5;
+      --text-muted: #949ba4;
+      --border-color: #2b2d31;
+      --success-color: #23a55a;
+      --font-mono: 'Cascadia Mono', Consolas, Monaco, monospace;
+      --font-mclaren: 'McLaren', cursive, sans-serif;
+    }
+
+    /* Embedded Font-Faces using GitHub Raw Links */
+    @font-face {
+      font-family: 'McLaren';
+      src: url('https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/McLaren/McLaren-Regular.ttf?raw=1') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Cascadia Mono';
+      src: url('https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Regular.ttf?raw=1') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Cascadia Mono Bold';
+      src: url('https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Bold.ttf?raw=1') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      max-width: 650px;
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #5865f2, #99aab5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .font-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .font-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .badge {
+      background-color: rgba(88, 101, 242, 0.15);
+      color: var(--accent-color);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .preview-box {
+      background-color: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Font Specific Classes */
+    .preview-mclaren {
+      font-family: 'McLaren', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .preview-cascadia {
+      font-family: 'Cascadia Mono', monospace;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .preview-subtext {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .copy-btn {
+      width: 100%;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .copy-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .copy-btn:active {
+      transform: scale(0.98);
+    }
+
+    .copy-btn.copied {
+      background-color: var(--success-color);
+    }
+
+    .copy-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Revenge Discord Fonts</h1>
+    <p>Preview and copy direct JSON URLs for custom typography in Revenge Discord Mobile.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- McLaren Card -->
+    <div class="font-card">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">McLaren</h2>
+          <span class="badge">Display / Sans</span>
+        </div>
+        <div class="preview-box">
+          <p class="preview-mclaren">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-mclaren preview-subtext">0123456789 • !@#$%^&*()</p>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/McLaren.json')">
+        <svg viewBox="0 0 24 24">
+          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+        </svg>
+        <span>Copy JSON Link</span>
+      </button>
+    </div>
+
+    <!-- Cascadia Mono Card -->
+    <div class="font-card">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">Cascadia Mono</h2>
+          <span class="badge">Monospace</span>
+        </div>
+        <div class="preview-box">
+          <p class="preview-cascadia">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-cascadia preview-subtext">0123456789 • !@#$%^&*()</p>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/Cascadia_Mono.json')">
+        <svg viewBox="0 0 24 24">
+          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+        </svg>
+        <span>Copy JSON Link</span>
+      </button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Maintained by <a href="https://github.com/AhmadMorningstar" target="_blank">AhmadMorningstar</a></p>
+  </footer>
+
+  <script>
+    function copyLink(button, url) {
+      navigator.clipboard.writeText(url).then(() => {
+        const originalHTML = button.innerHTML;
+        button.classList.add('copied');
+        button.innerHTML = `
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+          </svg>
+          <span>Copied!</span>
+        `;
+        setTimeout(() => {
+          button.classList.remove('copied');
+          button.innerHTML = originalHTML;
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
+
+</body>
+</html>
