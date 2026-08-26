@@ -8,6 +8,7 @@
     :root {
       --bg-color: #0f111a;
       --card-bg: #1a1d2d;
+      --control-bg: #11131f;
       --accent-color: #5865f2;
       --accent-hover: #4752c4;
       --text-main: #f2f3f5;
@@ -79,7 +80,7 @@
     header {
       text-align: center;
       max-width: 650px;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     header h1 {
@@ -96,6 +97,103 @@
       color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.5;
+    }
+
+    /* Controls Toolbar */
+    .toolbar-container {
+      width: 100%;
+      max-width: 800px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .style-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .toggle-btn {
+      background-color: var(--control-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toggle-btn:hover {
+      color: var(--text-main);
+      border-color: var(--accent-color);
+    }
+
+    .toggle-btn.active {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border-color: var(--accent-color);
+    }
+
+    .size-control {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-grow: 1;
+      max-width: 280px;
+    }
+
+    .size-control label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .size-control input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--control-bg);
+      outline: none;
+      border: 1px solid var(--border-color);
+    }
+
+    .size-control input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .size-control input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .size-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      min-width: 38px;
+      text-align: right;
     }
 
     .container {
@@ -161,20 +259,37 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      overflow: hidden;
+    }
+
+    .preview-text {
+      line-height: 1.4;
+      transition: font-size 0.15s ease;
+      word-break: break-word;
     }
 
     /* Font Specific Classes */
-    .preview-mclaren { font-family: 'McLaren', sans-serif; font-size: 1rem; line-height: 1.4; }
-    .preview-cascadia { font-family: 'Cascadia Mono', monospace; font-size: 1rem; line-height: 1.4; }
-    .preview-archivo { font-family: 'Archivo Black', sans-serif; font-size: 1rem; line-height: 1.4; }
-    .preview-asap { font-family: 'Asap Sharp', sans-serif; font-size: 1rem; line-height: 1.4; }
-    .preview-jetbrains { font-family: 'JetBrains Mono', monospace; font-size: 1rem; line-height: 1.4; }
-    .preview-gotham { font-family: 'Gotham', sans-serif; font-size: 1rem; line-height: 1.4; }
+    .preview-mclaren { font-family: 'McLaren', sans-serif; }
+    .preview-cascadia { font-family: 'Cascadia Mono', monospace; }
+    .preview-archivo { font-family: 'Archivo Black', sans-serif; }
+    .preview-asap { font-family: 'Asap Sharp', sans-serif; }
+    .preview-jetbrains { font-family: 'JetBrains Mono', monospace; }
+    .preview-gotham { font-family: 'Gotham', sans-serif; }
+
+    /* Dynamic Style Modifier Classes */
+    .style-bold { font-weight: bold !important; }
+    .style-italic { font-style: italic !important; }
+    .style-underline { text-decoration: underline !important; }
+    .style-strike { text-decoration: line-through !important; }
+    .style-underline.style-strike { text-decoration: underline line-through !important; }
 
     .preview-subtext {
       margin-top: 0.5rem;
-      font-size: 0.8rem;
+      font-size: 0.8rem !important;
       color: var(--text-muted);
+      font-weight: normal !important;
+      font-style: normal !important;
+      text-decoration: none !important;
     }
 
     .copy-btn {
@@ -226,6 +341,23 @@
     <p>Preview and copy direct JSON URLs for custom typography in Revenge Discord Mobile.</p>
   </header>
 
+  <!-- Real-Time Font Toolbar -->
+  <div class="toolbar-container">
+    <div class="style-buttons">
+      <button class="toggle-btn active" id="btn-normal" onclick="setStyle('normal')">Normal</button>
+      <button class="toggle-btn" id="btn-bold" onclick="toggleStyle('bold')"><b>B</b></button>
+      <button class="toggle-btn" id="btn-italic" onclick="toggleStyle('italic')"><i>I</i></button>
+      <button class="toggle-btn" id="btn-underline" onclick="toggleStyle('underline')"><u>U</u></button>
+      <button class="toggle-btn" id="btn-strike" onclick="toggleStyle('strike')"><s>S</s></button>
+    </div>
+    
+    <div class="size-control">
+      <label for="sizeSlider">Size</label>
+      <input type="range" id="sizeSlider" min="12" max="28" value="16" oninput="updateFontSize(this.value)">
+      <span class="size-badge" id="sizeValue">16px</span>
+    </div>
+  </div>
+
   <main class="container">
 
     <!-- McLaren Card -->
@@ -236,7 +368,7 @@
           <span class="badge">Display / Sans</span>
         </div>
         <div class="preview-box">
-          <p class="preview-mclaren">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-text preview-mclaren">The quick brown fox jumps over the lazy dog.</p>
           <p class="preview-mclaren preview-subtext">0123456789 • !@#$%^&*()</p>
         </div>
       </div>
@@ -254,7 +386,7 @@
           <span class="badge">Monospace</span>
         </div>
         <div class="preview-box">
-          <p class="preview-cascadia">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-text preview-cascadia">The quick brown fox jumps over the lazy dog.</p>
           <p class="preview-cascadia preview-subtext">0123456789 • !@#$%^&*()</p>
         </div>
       </div>
@@ -272,7 +404,7 @@
           <span class="badge">Display / Sans</span>
         </div>
         <div class="preview-box">
-          <p class="preview-archivo">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-text preview-archivo">The quick brown fox jumps over the lazy dog.</p>
           <p class="preview-archivo preview-subtext">0123456789 • !@#$%^&*()</p>
         </div>
       </div>
@@ -290,7 +422,7 @@
           <span class="badge">Sans-Serif</span>
         </div>
         <div class="preview-box">
-          <p class="preview-asap">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-text preview-asap">The quick brown fox jumps over the lazy dog.</p>
           <p class="preview-asap preview-subtext">0123456789 • !@#$%^&*()</p>
         </div>
       </div>
@@ -308,7 +440,7 @@
           <span class="badge">Monospace</span>
         </div>
         <div class="preview-box">
-          <p class="preview-jetbrains">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-text preview-jetbrains">The quick brown fox jumps over the lazy dog.</p>
           <p class="preview-jetbrains preview-subtext">0123456789 • !@#$%^&*()</p>
         </div>
       </div>
@@ -318,7 +450,7 @@
       </button>
     </div>
 
-        <!-- Gotham -->
+    <!-- Gotham Card -->
     <div class="font-card">
       <div>
         <div class="card-header">
@@ -326,7 +458,7 @@
           <span class="badge">Sans-Serif</span>
         </div>
         <div class="preview-box">
-          <p class="preview-gotham">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-text preview-gotham">The quick brown fox jumps over the lazy dog.</p>
           <p class="preview-gotham preview-subtext">0123456789 • !@#$%^&*()</p>
         </div>
       </div>
@@ -343,6 +475,45 @@
   </footer>
 
   <script>
+    const previews = document.querySelectorAll('.preview-text');
+
+    function toggleStyle(style) {
+      const btn = document.getElementById(`btn-${style}`);
+      const btnNormal = document.getElementById('btn-normal');
+      
+      btn.classList.toggle('active');
+      
+      previews.forEach(el => {
+        el.classList.toggle(`style-${style}`);
+      });
+
+      // Check if any active style exists
+      const anyActive = document.querySelectorAll('.toggle-btn.active:not(#btn-normal)').length > 0;
+      if (anyActive) {
+        btnNormal.classList.remove('active');
+      } else {
+        btnNormal.classList.add('active');
+      }
+    }
+
+    function setStyle(style) {
+      if (style === 'normal') {
+        const styles = ['bold', 'italic', 'underline', 'strike'];
+        styles.forEach(s => {
+          document.getElementById(`btn-${s}`).classList.remove('active');
+          previews.forEach(el => el.classList.remove(`style-${s}`));
+        });
+        document.getElementById('btn-normal').classList.add('active');
+      }
+    }
+
+    function updateFontSize(val) {
+      document.getElementById('sizeValue').innerText = val + 'px';
+      previews.forEach(el => {
+        el.style.fontSize = val + 'px';
+      });
+    }
+
     function copyLink(button, url) {
       navigator.clipboard.writeText(url).then(() => {
         const originalHTML = button.innerHTML;
@@ -361,8 +532,10 @@
         console.error('Failed to copy: ', err);
       });
     }
+
+    // Set initial size
+    updateFontSize(16);
   </script>
 
-  
 </body>
 </html>
