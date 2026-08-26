@@ -14,8 +14,6 @@
       --text-muted: #949ba4;
       --border-color: #2b2d31;
       --success-color: #23a55a;
-      --font-mono: 'Cascadia Mono', Consolas, Monaco, monospace;
-      --font-mclaren: 'McLaren', cursive, sans-serif;
     }
 
     /* Embedded Font-Faces using GitHub Raw Links */
@@ -34,9 +32,23 @@
     }
 
     @font-face {
-      font-family: 'Cascadia Mono Bold';
-      src: url('https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Cascadia_Mono/CascadiaMono-Bold.ttf?raw=1') format('truetype');
-      font-weight: bold;
+      font-family: 'Archivo Black';
+      src: url('https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Archivo_Black/ArchivoBlack-Regular.ttf?raw=1') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Asap Sharp';
+      src: url('https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/Asap_Sharp/static/AsapSharp-Regular.ttf?raw=1') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'JetBrains Mono';
+      src: url('https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf?raw=1') format('truetype');
+      font-weight: normal;
       font-style: normal;
     }
 
@@ -145,17 +157,11 @@
     }
 
     /* Font Specific Classes */
-    .preview-mclaren {
-      font-family: 'McLaren', sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.4;
-    }
-
-    .preview-cascadia {
-      font-family: 'Cascadia Mono', monospace;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
+    .preview-mclaren { font-family: 'McLaren', sans-serif; font-size: 1.1rem; line-height: 1.4; }
+    .preview-cascadia { font-family: 'Cascadia Mono', monospace; font-size: 0.95rem; line-height: 1.4; }
+    .preview-archivo { font-family: 'Archivo Black', sans-serif; font-size: 1rem; line-height: 1.4; }
+    .preview-asap { font-family: 'Asap Sharp', sans-serif; font-size: 1.05rem; line-height: 1.4; }
+    .preview-jetbrains { font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.4; }
 
     .preview-subtext {
       margin-top: 0.5rem;
@@ -180,17 +186,9 @@
       transition: background-color 0.2s ease, transform 0.1s ease;
     }
 
-    .copy-btn:hover {
-      background-color: var(--accent-hover);
-    }
-
-    .copy-btn:active {
-      transform: scale(0.98);
-    }
-
-    .copy-btn.copied {
-      background-color: var(--success-color);
-    }
+    .copy-btn:hover { background-color: var(--accent-hover); }
+    .copy-btn:active { transform: scale(0.98); }
+    .copy-btn.copied { background-color: var(--success-color); }
 
     .copy-btn svg {
       width: 18px;
@@ -210,9 +208,7 @@
       text-decoration: none;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -237,9 +233,7 @@
         </div>
       </div>
       <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/McLaren.json')">
-        <svg viewBox="0 0 24 24">
-          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
         <span>Copy JSON Link</span>
       </button>
     </div>
@@ -257,9 +251,61 @@
         </div>
       </div>
       <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/Cascadia_Mono.json')">
-        <svg viewBox="0 0 24 24">
-          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>Copy JSON Link</span>
+      </button>
+    </div>
+
+    <!-- Archivo Black Card -->
+    <div class="font-card">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">Archivo Black</h2>
+          <span class="badge">Display / Sans</span>
+        </div>
+        <div class="preview-box">
+          <p class="preview-archivo">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-archivo preview-subtext">0123456789 • !@#$%^&*()</p>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/Archivo_Black.json')">
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>Copy JSON Link</span>
+      </button>
+    </div>
+
+    <!-- Asap Sharp Card -->
+    <div class="font-card">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">Asap Sharp</h2>
+          <span class="badge">Sans-Serif</span>
+        </div>
+        <div class="preview-box">
+          <p class="preview-asap">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-asap preview-subtext">0123456789 • !@#$%^&*()</p>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/Asap_Sharp.json')">
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>Copy JSON Link</span>
+      </button>
+    </div>
+
+    <!-- JetBrains Mono Card -->
+    <div class="font-card">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">JetBrains Mono</h2>
+          <span class="badge">Monospace</span>
+        </div>
+        <div class="preview-box">
+          <p class="preview-jetbrains">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-jetbrains preview-subtext">0123456789 • !@#$%^&*()</p>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/JetBrainsMono.json')">
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
         <span>Copy JSON Link</span>
       </button>
     </div>
