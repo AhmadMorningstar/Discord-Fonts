@@ -1,0 +1,25 @@
+{
+  "spec": 1,
+  "name": "DM Sans",
+  "previewText": "DM Sans is a clean, modern geometric sans-serif typeface designed for high legibility.",
+  "main": {
+    "ABCGintoNord-ExtraBold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-ExtraBold.ttf?raw=1",
+    "ggsans-Bold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Bold.ttf?raw=1",
+    "ggsans-BoldItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-BoldItalic.ttf?raw=1",
+    "ggsans-ExtraBold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-ExtraBold.ttf?raw=1",
+    "ggsans-ExtraBoldItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-ExtraBoldItalic.ttf?raw=1",
+    "ggsans-Medium": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Medium.ttf?raw=1",
+    "ggsans-MediumItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-MediumItalic.ttf?raw=1",
+    "ggsans-Normal": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Regular.ttf?raw=1",
+    "ggsans-NormalItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Italic.ttf?raw=1",
+    "ggsans-Semibold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-SemiBold.ttf?raw=1",
+    "ggsans-SemiboldItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-SemiBoldItalic.ttf?raw=1",
+    "NotoSans-Bold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Bold.ttf?raw=1",
+    "NotoSans-ExtraBold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-ExtraBold.ttf?raw=1",
+    "NotoSans-Medium": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Medium.ttf?raw=1",
+    "NotoSans-Normal": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Regular.ttf?raw=1",
+    "NotoSans-NormalItalic": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Italic.ttf?raw=1",
+    "NotoSans-Semibold": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-SemiBold.ttf?raw=1",
+    "ggmono-Normal": "https://github.com/AhmadMorningstar/Discord-Fonts/raw/main/DM_Sans/static/DMSans-Regular.ttf?raw=1"
+  }
+}

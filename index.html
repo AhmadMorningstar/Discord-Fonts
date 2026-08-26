@@ -60,6 +60,13 @@
       font-style: normal;
     }
 
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/DM_Sans/static/DMSans-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -275,6 +282,7 @@
     .preview-asap { font-family: 'Asap Sharp', sans-serif; }
     .preview-jetbrains { font-family: 'JetBrains Mono', monospace; }
     .preview-gotham { font-family: 'Gotham', sans-serif; }
+    .preview-dmsans { font-family: 'DM Sans', sans-serif; }
 
     /* Dynamic Style Modifier Classes */
     .style-bold { font-weight: bold !important; }
@@ -463,6 +471,24 @@
         </div>
       </div>
       <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/Gotham.json')">
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span>Copy Link</span>
+      </button>
+    </div>
+
+        <!-- Dm Sans Card -->
+    <div class="font-card">
+      <div>
+        <div class="card-header">
+          <h2 class="card-title">DM Sans</h2>
+          <span class="badge">Sans-Serif</span>
+        </div>
+        <div class="preview-box">
+          <p class="preview-text preview-dmsans">The quick brown fox jumps over the lazy dog.</p>
+          <p class="preview-dmsans preview-subtext">0123456789 • !@#$%^&*()</p>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyLink(this, 'https://raw.githubusercontent.com/AhmadMorningstar/Discord-Fonts/main/DM_Sans.json')">
         <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
         <span>Copy Link</span>
       </button>
